@@ -3,6 +3,29 @@ import Link from "next/link";
 import Footer from "@/components/Footer";
 import MessengerChat from "@/components/MessengerChat";
 import "./privacy.css";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "კონფიდენციალურობის პოლიტიკა - ფორმაცია",
+  description:
+    "ფორმაცია-ს კონფიდენციალურობის პოლიტიკა: როგორ ვიყენებთ და ვიცავთ თქვენს პირად ინფორმაციას. მონაცემთა დაცვის წესები და უსაფრთხოება.",
+  keywords: [
+    "კონფიდენციალურობა",
+    "პირადი ინფორმაცია",
+    "მონაცემთა დაცვა",
+    "ფორმაცია",
+    "უსაფრთხოება",
+  ],
+  robots: "index, follow",
+  openGraph: {
+    title: "კონფიდენციალურობის პოლიტიკა - ფორმაცია",
+    description: "მონაცემთა დაცვის წესები და კონფიდენციალურობის პოლიტიკა",
+    url: "https://formation.ge/privacy",
+    siteName: "ფორმაცია",
+    locale: "ka_GE",
+    type: "website",
+  },
+};
 
 export default function Privacy() {
   return (
@@ -162,6 +185,12 @@ export default function Privacy() {
             <p className="last-updated">
               ბოლო განახლება: 2025 წლის 26 სექტემბერი
             </p>
+
+            <div className="back-to-contact">
+              <Link href="/contact" className="back-button">
+                ← კონტაქტის გვერდზე დაბრუნება
+              </Link>
+            </div>
           </section>
         </div>
       </main>

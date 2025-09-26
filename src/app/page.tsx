@@ -4,11 +4,22 @@ import Footer from "@/components/Footer";
 import MessengerChat from "@/components/MessengerChat";
 import "./page.css";
 import { Metadata } from "next";
+import { organizationSchema, websiteSchema } from "@/lib/schemas";
 
 export const metadata: Metadata = {
   title: "ფორმაცია - ემოციების ჰაბი | ემოციური განვითარების კურსები",
-  description: "ფორმაცია არის ემოციების განვითარების ცენტრი, სადაც ვთავაზობთ მითოდრამის, კალიგრაფიის, Self მარკეტინგის და სხვა უნიკალურ კურსებს ბავშვებისა და მოზარდებისთვის. 540+ დასრულებული სტუდენტი.",
-  keywords: ["ფორმაცია", "ემოციები", "მითოდრამა", "კალიგრაფია", "Self მარკეტინგი", "ბავშვების განვითარება", "მოზარდების კურსები", "თბილისი"],
+  description:
+    "ფორმაცია არის ემოციების განვითარების ცენტრი, სადაც ვთავაზობთ მითოდრამის, კალიგრაფიის, Self მარკეტინგის და სხვა უნიკალურ კურსებს ბავშვებისა და მოზარდებისთვის. 540+ დასრულებული სტუდენტი.",
+  keywords: [
+    "ფორმაცია",
+    "ემოციები",
+    "მითოდრამა",
+    "კალიგრაფია",
+    "Self მარკეტინგი",
+    "ბავშვების განვითარება",
+    "მოზარდების კურსები",
+    "თბილისი",
+  ],
   authors: [{ name: "ფორმაცია - ემოციების ჰაბი" }],
   viewport: "width=device-width, initial-scale=1",
   robots: "index, follow",
@@ -175,6 +186,16 @@ export default function Home() {
 
       <Footer />
       <MessengerChat />
+
+      {/* Schema.org structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
     </div>
   );
 }

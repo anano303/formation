@@ -29,6 +29,7 @@
 .footer-main img {
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(233, 30, 99, 0.3);
+  width: 200px;
 }
 
 .footer-brand h3 {

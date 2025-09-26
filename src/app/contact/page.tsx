@@ -3,6 +3,38 @@ import Link from "next/link";
 import Footer from "@/components/Footer";
 import MessengerChat from "@/components/MessengerChat";
 import "./contact.css";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "კონტაქტი - ფორმაცია | დაგვიკავშირდით",
+  description:
+    "დაგვიკავშირდით ფორმაცია-ს: ტელ: 511 44 75 77, მისამართი: 19 Pavle Ingorokva St, თბილისი. კითხვები კურსების შესახებ, რეგისტრაცია და კონსულტაციები. სამუშაო საათები: ორშაბათი-პარასკევი 10:00-18:00.",
+  keywords: [
+    "ფორმაცია კონტაქტი",
+    "511447577",
+    "Pavle Ingorokva",
+    "თბილისი",
+    "კურსების რეგისტრაცია",
+    "კონსულტაცია",
+    "ემოციების ჰაბი",
+  ],
+  openGraph: {
+    title: "კონტაქტი - ფორმაცია",
+    description: "დაგვიკავშირდით კურსების შესახებ ინფორმაციისთვის",
+    url: "https://formation.ge/contact",
+    siteName: "ფორმაცია",
+    images: [
+      {
+        url: "/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "ფორმაცია კონტაქტი",
+      },
+    ],
+    locale: "ka_GE",
+    type: "website",
+  },
+};
 
 export default function Contact() {
   return (

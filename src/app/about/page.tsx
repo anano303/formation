@@ -3,6 +3,38 @@ import Link from "next/link";
 import Footer from "@/components/Footer";
 import MessengerChat from "@/components/MessengerChat";
 import "./about.css";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "ჩვენ შესახებ - ფორმაცია | ემოციების ჰაბი",
+  description:
+    "ფორმაცია არის ემოციური განვითარების ცენტრი, რომელიც დაარსდა 2020 წელს. ჩვენი მისიაა ბავშვებსა და მოზარდებს მივცეთ ინსტრუმენტები ემოციების ჯანსაღად გამოსახატავად. 540+ წარმატებული სტუდენტი, 5 უნიკალური კურსი.",
+  keywords: [
+    "ფორმაცია",
+    "ემოციების ჰაბი",
+    "ემოციური განვითარება",
+    "ბავშვების განათლება",
+    "მოზარდების პროგრამები",
+    "თბილისი",
+    "2020",
+  ],
+  openGraph: {
+    title: "ჩვენ შესახებ - ფორმაცია",
+    description: "ემოციური განვითარების ცენტრი 540+ წარმატებული სტუდენტით",
+    url: "https://formation.ge/about",
+    siteName: "ფორმაცია",
+    images: [
+      {
+        url: "/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "ფორმაცია გუნდი",
+      },
+    ],
+    locale: "ka_GE",
+    type: "website",
+  },
+};
 
 export default function About() {
   return (
