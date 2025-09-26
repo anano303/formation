@@ -11,6 +11,8 @@
     #ce93d8 100%
   );
   min-height: 100vh;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* Header */
@@ -140,6 +142,140 @@
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
+}
+
+/* კომპაქტური ქარდები */
+.course-card-compact {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.course-card-compact:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.course-content-compact {
+  padding: 1.5rem;
+}
+
+.course-description-short {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.course-info-compact {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  background: rgba(233, 30, 99, 0.05);
+  border-radius: 10px;
+}
+
+.course-bottom-compact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+.course-actions-compact {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.btn-view-details {
+  flex: 1;
+  padding: 0.8rem;
+  border: 2px solid #e91e63;
+  border-radius: 12px;
+  background: transparent;
+  color: #e91e63;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-view-details:hover {
+  background: #e91e63;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-enroll-compact {
+  flex: 1;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #4caf50, #66bb6a);
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-enroll-compact:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+/* გაფართოებული დეტალები */
+.course-details-expanded {
+  margin-top: 1rem;
+  border-top: 2px solid #e91e63;
+  animation: expandDetails 0.3s ease-out;
+}
+
+@keyframes expandDetails {
+  from {
+    opacity: 0;
+    max-height: 0;
+    padding-top: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 1000px;
+    padding-top: 1rem;
+  }
+}
+
+.expanded-content {
+  padding-top: 1rem;
+}
+
+.course-description-full {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.course-info-detailed {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding: 0.8rem;
+  background: rgba(233, 30, 99, 0.05);
+  border-radius: 10px;
+}
+
+.expanded-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
 }
 
 .course-card-detailed {
@@ -912,48 +1048,43 @@
     gap: 1rem;
   }
 
-  .course-card {
+  /* კომპაქტური ქარდები მობაილზე */
+  .course-card-compact {
     margin-bottom: 1rem;
+  }
+
+  .course-content-compact {
     padding: 1rem;
   }
 
-  .course-image {
-    height: 180px;
-    margin-bottom: 1rem;
+  .course-image-container {
+    height: 150px;
   }
 
-  .course-title {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
+  .course-content-compact h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
   }
 
-  .course-description {
-    font-size: 0.9rem;
+  .course-description-short {
+    font-size: 0.85rem;
     line-height: 1.4;
   }
 
-  .course-info {
+  .course-info-compact {
     flex-direction: column;
     gap: 0.5rem;
-    margin-bottom: 1rem;
+    padding: 0.8rem;
   }
 
-  .course-meta {
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
-  .course-meta span {
+  .course-info-compact .info-item {
     font-size: 0.8rem;
-    flex: 1;
-    min-width: 120px;
   }
 
-  .course-bottom {
+  .course-bottom-compact {
     flex-direction: column;
     align-items: stretch;
-    gap: 1rem;
+    gap: 0.8rem;
     margin-bottom: 1rem;
   }
 
@@ -963,18 +1094,28 @@
 
   .course-price {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
-  .course-actions {
+  .course-actions-compact {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .btn-view-details,
+  .btn-enroll-compact {
+    padding: 0.7rem;
+    font-size: 0.85rem;
+  }
+
+  .course-info-detailed {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .expanded-actions {
     flex-direction: column;
     gap: 0.8rem;
-  }
-
-  .btn-enroll,
-  .btn-preview {
-    padding: 0.8rem;
-    font-size: 0.9rem;
   }
 
   .cta-section {
@@ -1000,32 +1141,85 @@
     padding: 0.5rem;
   }
 
-  .course-card {
+  /* კომპაქტური ქარდები პატარა მობაილზე */
+  .course-card-compact {
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .course-content-compact {
     padding: 0.8rem;
-    border-radius: 12px;
   }
 
-  .course-title {
-    font-size: 1.2rem;
+  .course-image-container {
+    height: 120px;
   }
 
-  .course-description {
-    font-size: 0.85rem;
+  .course-content-compact h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.6rem;
   }
 
-  .course-meta span {
+  .course-description-short {
+    font-size: 0.8rem;
+    line-height: 1.3;
+  }
+
+  .course-info-compact {
+    padding: 0.6rem;
+    gap: 0.4rem;
+  }
+
+  .course-info-compact .info-item {
     font-size: 0.75rem;
-    min-width: 100px;
+  }
+
+  .course-bottom-compact {
+    gap: 0.6rem;
   }
 
   .course-price {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+  }
+
+  .course-actions-compact {
+    gap: 0.5rem;
+  }
+
+  .btn-view-details,
+  .btn-enroll-compact {
+    padding: 0.6rem;
+    font-size: 0.8rem;
+    border-radius: 10px;
+  }
+
+  .course-features ul {
+    padding-left: 0;
+  }
+
+  .course-features li {
+    font-size: 0.8rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .course-testimonial {
+    padding: 0.8rem;
+    margin: 1rem 0;
+  }
+
+  .course-testimonial p {
+    font-size: 0.8rem;
+    padding-left: 1rem;
+  }
+
+  .expanded-actions {
+    gap: 0.6rem;
   }
 
   .btn-enroll,
   .btn-preview {
     padding: 0.7rem;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
 
   .cta-section h2 {
@@ -1039,5 +1233,189 @@
 
   .guarantee-text p {
     font-size: 0.9rem;
+  }
+}
+
+/* ძალიან პატარა ეკრანები (320px-380px) */
+@media (max-width: 380px) {
+  .courses-page {
+    overflow-x: hidden;
+    width: 100vw;
+  }
+
+  .courses-header .nav-content {
+    padding: 0 0.25rem;
+  }
+
+  .back-link {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.75rem;
+  }
+
+  .logo-section h1 {
+    font-size: 1rem;
+  }
+
+  .logo-section p {
+    font-size: 0.65rem;
+  }
+
+  .container {
+    padding: 0 0.25rem;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .courses-hero {
+    padding: 1rem 0;
+  }
+
+  .courses-hero h1 {
+    font-size: 1.4rem;
+    line-height: 1.1;
+  }
+
+  .courses-hero p {
+    font-size: 0.8rem;
+  }
+
+  .hero-stats {
+    gap: 0.5rem;
+    padding: 0 0.5rem;
+  }
+
+  .hero-stats > div {
+    min-width: 80px;
+    padding: 0.8rem;
+  }
+
+  .hero-stats span {
+    font-size: 1.2rem;
+  }
+
+  .courses-grid {
+    gap: 0.75rem;
+    padding: 0;
+  }
+
+  .course-card-compact {
+    margin: 0;
+    border-radius: 12px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .course-content-compact {
+    padding: 0.75rem;
+  }
+
+  .course-image-container {
+    height: 100px;
+  }
+
+  .course-content-compact h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .course-description-short {
+    font-size: 0.75rem;
+    line-height: 1.3;
+  }
+
+  .course-info-compact {
+    padding: 0.5rem;
+    gap: 0.3rem;
+  }
+
+  .course-info-compact .info-item {
+    font-size: 0.7rem;
+  }
+
+  .course-bottom-compact {
+    gap: 0.5rem;
+  }
+
+  .course-price {
+    font-size: 1.1rem;
+  }
+
+  .course-actions-compact {
+    gap: 0.4rem;
+  }
+
+  .btn-view-details,
+  .btn-enroll-compact {
+    padding: 0.5rem;
+    font-size: 0.75rem;
+    border-radius: 8px;
+  }
+
+  .expanded-content {
+    padding-top: 0.75rem;
+  }
+
+  .course-description-full {
+    font-size: 0.8rem;
+  }
+
+  .course-info-detailed {
+    padding: 0.5rem;
+  }
+
+  .course-instructor,
+  .course-methodology {
+    padding: 0.75rem;
+  }
+
+  .course-features ul {
+    padding-left: 0;
+  }
+
+  .course-features li {
+    font-size: 0.75rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .course-testimonial {
+    padding: 0.75rem;
+    margin: 0.75rem 0;
+  }
+
+  .course-testimonial p {
+    font-size: 0.75rem;
+    padding-left: 0.8rem;
+  }
+
+  .expanded-actions {
+    gap: 0.5rem;
+  }
+
+  .btn-enroll,
+  .btn-preview {
+    padding: 0.6rem;
+    font-size: 0.75rem;
+  }
+
+  .cta-section {
+    padding: 1.5rem 0.25rem;
+  }
+
+  .cta-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .cta-section p {
+    font-size: 0.8rem;
+  }
+
+  .cta-buttons {
+    gap: 0.5rem;
+  }
+
+  .btn-contact,
+  .btn-learn-more {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
   }
 }

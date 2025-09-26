@@ -13,6 +13,8 @@
     #ab47bc 100%
   );
   min-height: 100vh;
+  overflow-x: hidden; /* horizontal scroll-ის მოცილება */
+  width: 100%;
 }
 
 /* Header */
@@ -34,6 +36,31 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+@media (max-width: 768px) {
+  .contact-header .nav-content {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-header .nav-content {
+    padding: 0 0.5rem;
+  }
+
+  .back-link {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .logo-section h1 {
+    font-size: 1.1rem;
+  }
+
+  .logo-section p {
+    font-size: 0.7rem;
+  }
 }
 
 .back-link {
@@ -82,6 +109,8 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Hero Section */
@@ -111,6 +140,18 @@
 /* Main Contact Section */
 .contact-main {
   padding: 2rem 0;
+}
+
+@media (max-width: 768px) {
+  .contact-main {
+    padding: 1rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-main {
+    padding: 0.5rem 0;
+  }
 }
 
 .contact-content {
@@ -179,6 +220,20 @@
   font-family: inherit;
   transition: all 0.3s ease;
   background: #fafafa;
+  min-height: 44px; /* iOS touch target minimum */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* მობაილური touch targets */
+@media (max-width: 768px) {
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    min-height: 48px;
+    font-size: 16px; /* iOS zoom prevention */
+  }
 }
 
 .form-group input:focus,
@@ -533,8 +588,26 @@
     padding: 1rem;
   }
 
+  .contact-hero {
+    padding: 2rem 0;
+  }
+
   .contact-hero h1 {
     font-size: 2.5rem;
+    line-height: 1.2;
+  }
+
+  .contact-hero p {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .contact-main {
+    padding: 1rem 0;
   }
 
   .contact-content {
@@ -542,15 +615,78 @@
     gap: 2rem;
   }
 
-  .form-row {
-    grid-template-columns: 1fr;
+  .contact-form-section {
+    padding: 1.5rem;
+    margin: 0;
   }
 
-  .contact-form-section,
-  .contact-info,
-  .social-section,
+  .form-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .submit-btn {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .contact-info-section {
+    gap: 1.5rem;
+  }
+
+  .contact-info {
+    padding: 1.5rem;
+    margin: 0;
+  }
+
+  .contact-info h3 {
+    font-size: 1.5rem;
+  }
+
+  .info-item {
+    padding: 1rem;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .info-icon {
+    font-size: 1.5rem;
+    min-width: 40px;
+  }
+
+  .social-section {
+    padding: 1.5rem;
+    margin: 0;
+  }
+
+  .social-links {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .social-link {
+    justify-content: center;
+    padding: 1rem;
+  }
+
   .consultation-info {
-    margin: 0 1rem;
+    margin: 0;
+  }
+
+  .consultation-card {
+    padding: 1.5rem;
   }
 
   .faq-grid {
@@ -582,21 +718,111 @@
 }
 
 @media (max-width: 480px) {
-  .contact-hero h1 {
-    font-size: 2rem;
+  .contact-hero {
+    padding: 1.5rem 0;
   }
 
-  .contact-form-section,
-  .contact-info,
-  .social-section,
-  .consultation-info {
-    padding: 1.5rem;
+  .contact-hero h1 {
+    font-size: 1.8rem;
+    line-height: 1.1;
+  }
+
+  .contact-hero p {
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+  }
+
+  .container {
+    padding: 0 0.5rem;
+  }
+
+  .contact-content {
+    gap: 1.5rem;
+  }
+
+  .contact-form-section {
+    padding: 1rem;
+    border-radius: 15px;
+  }
+
+  .form-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .form-header p {
+    font-size: 0.9rem;
+  }
+
+  .contact-form {
+    gap: 1rem;
+  }
+
+  .form-group label {
+    font-size: 0.85rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.7rem;
+    font-size: 0.85rem;
+    border-radius: 10px;
+  }
+
+  .form-group textarea {
+    min-height: 100px;
+  }
+
+  .submit-btn {
+    padding: 0.8rem 1.2rem;
+    font-size: 0.9rem;
+    border-radius: 15px;
+  }
+
+  .checkbox-label {
+    font-size: 0.8rem;
+  }
+
+  .contact-info {
+    padding: 1rem;
+    border-radius: 15px;
+  }
+
+  .contact-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
   }
 
   .info-item {
     flex-direction: column;
     text-align: center;
     gap: 0.5rem;
+    padding: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .info-icon {
+    font-size: 1.8rem;
+  }
+
+  .info-content h4 {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .info-content p {
+    font-size: 0.85rem;
+    margin: 0.2rem 0;
+  }
+
+  .social-section {
+    padding: 1rem;
+    border-radius: 15px;
+  }
+
+  .social-section h4 {
+    font-size: 1.1rem;
   }
 
   .social-links {
@@ -605,15 +831,44 @@
 
   .social-link {
     padding: 0.8rem;
+    font-size: 0.8rem;
+    gap: 0.5rem;
+  }
+
+  .social-link svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .consultation-card {
+    padding: 1rem;
+    border-radius: 15px;
+  }
+
+  .consultation-card h4 {
+    font-size: 1.1rem;
+  }
+
+  .consultation-card p {
+    font-size: 0.85rem;
+  }
+
+  .cta-button {
+    padding: 0.8rem 1.2rem;
     font-size: 0.9rem;
   }
 
   .faq-item {
-    padding: 1.5rem;
+    padding: 1rem;
+    border-radius: 15px;
   }
 
-  .container {
-    padding: 0 1rem;
+  .faq-question {
+    font-size: 0.9rem;
+  }
+
+  .faq-answer {
+    font-size: 0.85rem;
   }
 }
 
@@ -643,4 +898,215 @@
   color: #66bb6a;
   border-bottom-color: #4caf50;
   transform: translateY(-1px);
+}
+
+/* ძალიან პატარა ეკრანები (320px-380px) */
+@media (max-width: 380px) {
+  * {
+    box-sizing: border-box;
+  }
+
+  .contact-page {
+    overflow-x: hidden;
+    width: 100vw;
+  }
+
+  .contact-header .nav-content {
+    padding: 0 0.25rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .back-link {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.75rem;
+    width: auto;
+    text-align: center;
+  }
+
+  .logo-section {
+    gap: 0.5rem;
+  }
+
+  .logo-section h1 {
+    font-size: 1rem;
+  }
+
+  .logo-section p {
+    font-size: 0.65rem;
+  }
+
+  .container {
+    padding: 0 0.25rem;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .contact-hero {
+    padding: 1rem 0;
+  }
+
+  .contact-hero h1 {
+    font-size: 1.5rem;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-hero p {
+    font-size: 0.8rem;
+    padding: 0;
+  }
+
+  .contact-content {
+    gap: 1rem;
+  }
+
+  .contact-form-section {
+    padding: 0.75rem;
+    margin: 0;
+    border-radius: 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .form-header h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .form-header p {
+    font-size: 0.8rem;
+  }
+
+  .contact-form {
+    gap: 0.8rem;
+  }
+
+  .form-group {
+    margin: 0;
+  }
+
+  .form-group label {
+    font-size: 0.75rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 40px;
+  }
+
+  .form-group textarea {
+    min-height: 80px;
+    resize: vertical;
+  }
+
+  .submit-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+    border-radius: 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .checkbox-label {
+    font-size: 0.7rem;
+    line-height: 1.3;
+  }
+
+  .checkbox-label input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    margin-right: 0.3rem;
+  }
+
+  .contact-info {
+    padding: 0.75rem;
+    margin: 0;
+    border-radius: 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .contact-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .info-item {
+    padding: 0.5rem;
+    margin-bottom: 0.6rem;
+    gap: 0.3rem;
+  }
+
+  .info-icon {
+    font-size: 1.5rem;
+  }
+
+  .info-content h4 {
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .info-content p {
+    font-size: 0.75rem;
+    margin: 0.1rem 0;
+  }
+
+  .social-section {
+    padding: 0.75rem;
+    border-radius: 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .social-section h4 {
+    font-size: 1rem;
+  }
+
+  .social-links {
+    gap: 0.3rem;
+  }
+
+  .social-link {
+    padding: 0.6rem;
+    font-size: 0.7rem;
+    gap: 0.3rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .social-link svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .consultation-card {
+    padding: 0.75rem;
+    border-radius: 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .consultation-card h4 {
+    font-size: 1rem;
+  }
+
+  .consultation-card p {
+    font-size: 0.75rem;
+    line-height: 1.3;
+  }
+
+  .cta-button {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
 }

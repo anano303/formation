@@ -5,6 +5,8 @@
   color: #333;
   min-height: 100vh;
   background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 50%, #e1bee7 100%);
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* Header და Navigation */

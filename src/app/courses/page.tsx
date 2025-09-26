@@ -1,9 +1,17 @@
+"use client";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/Footer";
 import "./courses.css";
 
 export default function Courses() {
+  const [expandedCourseId, setExpandedCourseId] = useState<number | null>(null);
+
+  const toggleCourseExpansion = (courseId: number) => {
+    setExpandedCourseId(expandedCourseId === courseId ? null : courseId);
+  };
+
   const courses = [
     {
       id: 1,
@@ -221,13 +229,14 @@ export default function Courses() {
         <div className="container">
           <div className="courses-grid">
             {courses.map((course) => (
-              <div key={course.id} className="course-card-detailed">
+              <div key={course.id} className="course-card-compact">
+                {/* კომპაქტური ძირითადი ინფო */}
                 <div className="course-image-container">
                   <Image
                     src={course.image}
                     alt={course.title}
                     width={400}
-                    height={250}
+                    height={200}
                     className="course-image"
                   />
                   {course.badge && (
@@ -245,11 +254,13 @@ export default function Courses() {
                   )}
                 </div>
 
-                <div className="course-content-detailed">
+                <div className="course-content-compact">
                   <h3>{course.title}</h3>
-                  <p className="course-description">{course.description}</p>
+                  <p className="course-description-short">
+                    {course.description.substring(0, 120)}...
+                  </p>
 
-                  <div className="course-info">
+                  <div className="course-info-compact">
                     <div className="info-item">
                       <span className="icon">⏱️</span>
                       <span>{course.duration}</span>
@@ -258,60 +269,93 @@ export default function Courses() {
                       <span className="icon">📊</span>
                       <span>{course.level}</span>
                     </div>
-                    <div className="info-item">
-                      <span className="icon">👥</span>
-                      <span>{course.students} სტუდენტი</span>
-                    </div>
-                    <div className="info-item">
-                      <span className="icon">📚</span>
-                      <span>{course.category}</span>
-                    </div>
                   </div>
 
-                  <div className="course-instructor">
-                    <h4>ინსტრუქტორი:</h4>
-                    <p>{course.instructor}</p>
-                  </div>
-
-                  <div className="course-methodology">
-                    <h4>სწავლების მეთოდოლოგია:</h4>
-                    <p>{course.methodology}</p>
-                  </div>
-
-                  <div className="course-features">
-                    <h4>რას შეისწავლი:</h4>
-                    <ul>
-                      {course.features.map((feature, index) => (
-                        <li key={index}>✓ {feature}</li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="course-bottom">
+                  <div className="course-bottom-compact">
                     <div className="course-rating">
                       <span className="stars">★★★★★</span>
-                      <span>
-                        {course.rating} ({course.students} შეფასება)
-                      </span>
+                      <span>{course.rating}</span>
                     </div>
                     <div className="course-price">₾{course.price}</div>
                   </div>
 
-                  <div className="course-testimonial">
-                    <div className="testimonial-content">
-                      <span className="quote-icon">"</span>
-                      <p>{course.testimonial}</p>
-                    </div>
+                  {/* ღილაკები */}
+                  <div className="course-actions-compact">
+                    <button
+                      className="btn-view-details"
+                      onClick={() => toggleCourseExpansion(course.id)}
+                    >
+                      {expandedCourseId === course.id
+                        ? "მოკლედ ნახვა"
+                        : "სრული ინფო"}
+                    </button>
+                    <Link href="/contact">
+                      <button className="btn-enroll-compact">ჩაწერა</button>
+                    </Link>
                   </div>
 
-                  <div className="course-actions">
-                    <Link href="/contact">
-                      <button className="btn-enroll">კურსზე ჩაწერა</button>
-                    </Link>
-                    <Link href="/about">
-                      <button className="btn-preview">უფასო გადახედვა</button>
-                    </Link>
-                  </div>
+                  {/* გაფართოებული ინფო */}
+                  {expandedCourseId === course.id && (
+                    <div className="course-details-expanded">
+                      <div className="expanded-content">
+                        <p className="course-description-full">
+                          {course.description}
+                        </p>
+
+                        <div className="course-info-detailed">
+                          <div className="info-item">
+                            <span className="icon">👥</span>
+                            <span>{course.students} სტუდენტი</span>
+                          </div>
+                          <div className="info-item">
+                            <span className="icon">📚</span>
+                            <span>{course.category}</span>
+                          </div>
+                        </div>
+
+                        <div className="course-instructor">
+                          <h4>ინსტრუქტორი:</h4>
+                          <p>{course.instructor}</p>
+                        </div>
+
+                        <div className="course-methodology">
+                          <h4>სწავლების მეთოდოლოგია:</h4>
+                          <p>{course.methodology}</p>
+                        </div>
+
+                        <div className="course-features">
+                          <h4>რას შეისწავლი:</h4>
+                          <ul>
+                            {course.features
+                              .slice(0, 5)
+                              .map((feature, index) => (
+                                <li key={index}>✓ {feature}</li>
+                              ))}
+                          </ul>
+                        </div>
+
+                        <div className="course-testimonial">
+                          <div className="testimonial-content">
+                            <span className="quote-icon">"</span>
+                            <p>{course.testimonial}</p>
+                          </div>
+                        </div>
+
+                        <div className="expanded-actions">
+                          <Link href="/contact">
+                            <button className="btn-enroll">
+                              კურსზე ჩაწერა
+                            </button>
+                          </Link>
+                          <Link href="/about">
+                            <button className="btn-preview">
+                              უფასო გადახედვა
+                            </button>
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
