@@ -4,7 +4,7 @@ import "./MessengerChat.css";
 export default function MessengerChat() {
   return (
     <Link
-      href="https://www.facebook.com/Formationemotionalhub"
+      href="https://m.me/Formationemotionalhub"
       target="_blank"
       rel="noopener noreferrer"
       className="messenger-chat-button"
