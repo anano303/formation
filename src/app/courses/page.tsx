@@ -3,6 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/Footer";
+import MessengerChat from "@/components/MessengerChat";
 import "./courses.css";
 
 export default function Courses() {
@@ -515,6 +516,7 @@ export default function Courses() {
       </section>
 
       <Footer />
+      <MessengerChat />
     </div>
   );
 }

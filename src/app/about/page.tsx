@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/Footer";
+import MessengerChat from "@/components/MessengerChat";
 import "./about.css";
 
 export default function About() {
@@ -306,6 +307,7 @@ export default function About() {
       </section>
 
       <Footer />
+      <MessengerChat />
     </div>
   );
 }
