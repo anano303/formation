@@ -1,0 +1,554 @@
+/* კურსების გვერდის სტილები */
+.courses-page {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: linear-gradient(
+    135deg,
+    #fce4ec 0%,
+    #f8bbd9 30%,
+    #e1bee7 70%,
+    #ce93d8 100%
+  );
+  min-height: 100vh;
+}
+
+/* Header */
+.courses-header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(233, 30, 99, 0.2);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.courses-header .nav-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.back-link {
+  color: #e91e63;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  border: 2px solid #e91e63;
+}
+
+.back-link:hover {
+  background: #e91e63;
+  color: white;
+  transform: translateX(-5px);
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-section img {
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(233, 30, 99, 0.3);
+}
+
+.logo-section h1 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #2d2d2d;
+  margin: 0;
+}
+
+.logo-section p {
+  font-size: 0.8rem;
+  color: #e91e63;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Hero სექცია */
+.courses-hero {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  margin: 2rem 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.courses-hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #2d2d2d;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.courses-hero p {
+  font-size: 1.3rem;
+  color: #666;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.hero-stats > div {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  min-width: 120px;
+}
+
+.hero-stats span {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #e91e63;
+  margin-bottom: 0.5rem;
+}
+
+/* კურსების ბადე */
+.courses-grid-section {
+  padding: 2rem;
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.course-card-detailed {
+  background: white;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.course-card-detailed:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+}
+
+.course-image-container {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.course-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.course-card-detailed:hover .course-image {
+  transform: scale(1.1);
+}
+
+.course-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: white;
+  z-index: 2;
+}
+
+.course-badge.popular {
+  background: linear-gradient(135deg, #e91e63, #f06292);
+}
+
+.course-badge.new {
+  background: linear-gradient(135deg, #4caf50, #66bb6a);
+}
+
+.course-badge.premium {
+  background: linear-gradient(135deg, #ff9800, #ffb74d);
+}
+
+/* კურსის კონტენტი */
+.course-content-detailed {
+  padding: 2rem;
+}
+
+.course-content-detailed h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2d2d2d;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.course-description {
+  color: #666;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.course-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: rgba(233, 30, 99, 0.05);
+  border-radius: 15px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.info-item .icon {
+  font-size: 1rem;
+}
+
+/* კურსის თვისებები */
+.course-features {
+  margin-bottom: 2rem;
+}
+
+.course-features h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2d2d2d;
+  margin-bottom: 1rem;
+}
+
+.course-features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.course-features li {
+  color: #666;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.course-features li::before {
+  content: "✓";
+  color: #4caf50;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+/* კურსის ბოლო ნაწილი */
+.course-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+.course-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stars {
+  color: #ffa726;
+  font-size: 1rem;
+}
+
+.course-rating span:last-child {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.course-price {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #e91e63;
+}
+
+/* კურსის ღილაკები */
+.course-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-enroll {
+  flex: 1;
+  padding: 1rem;
+  border: none;
+  border-radius: 15px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #e91e63, #f06292);
+  color: white;
+  box-shadow: 0 6px 20px rgba(233, 30, 99, 0.4);
+}
+
+.btn-enroll:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(233, 30, 99, 0.6);
+}
+
+.btn-preview {
+  flex: 1;
+  padding: 1rem;
+  border: 2px solid #e91e63;
+  border-radius: 15px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: transparent;
+  color: #e91e63;
+}
+
+.btn-preview:hover {
+  background: #e91e63;
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* CTA სექცია */
+.cta-section {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 4rem 2rem;
+  margin: 4rem 0;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.cta-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2d2d2d;
+  margin-bottom: 1rem;
+}
+
+.cta-section p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-contact {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #4caf50, #66bb6a);
+  color: white;
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+.btn-contact:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(76, 175, 80, 0.6);
+}
+
+.btn-learn-more {
+  padding: 1rem 2rem;
+  border: 2px solid #9c27b0;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: transparent;
+  color: #9c27b0;
+}
+
+.btn-learn-more:hover {
+  background: #9c27b0;
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* Footer */
+.courses-footer {
+  background: #2d2d2d;
+  color: white;
+  padding: 2rem;
+}
+
+.courses-footer .container {
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-main {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-main img {
+  border-radius: 10px;
+}
+
+.footer-main h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.footer-main p {
+  margin: 0;
+  color: #bbb;
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-links a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  color: #e91e63;
+}
+
+.courses-footer p:last-child {
+  color: #999;
+  border-top: 1px solid #444;
+  padding-top: 1rem;
+  margin-top: 2rem;
+}
+
+/* რესპონსივი დიზაინი */
+@media (max-width: 768px) {
+  .courses-header .nav-content {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .courses-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-stats {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .courses-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .course-info {
+    grid-template-columns: 1fr;
+  }
+
+  .course-actions {
+    flex-direction: column;
+  }
+
+  .cta-section h2 {
+    font-size: 2rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .footer-links {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .courses-grid {
+    grid-template-columns: 1fr;
+    margin: 1rem;
+  }
+
+  .course-card-detailed {
+    margin: 0;
+  }
+
+  .courses-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-stats > div {
+    min-width: 100px;
+    padding: 1rem;
+  }
+
+  .hero-stats span {
+    font-size: 1.5rem;
+  }
+}
