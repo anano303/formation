@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Footer from "@/components/Footer";
 import "./contact.css";
 
 export default function Contact() {
@@ -70,7 +71,7 @@ export default function Contact() {
                   <select id="interest" name="interest">
                     <option value="">აირჩიეთ კურსი</option>
                     <option value="emotional-intelligence">
-                      ემოციების მართვა /  ინტელექტის განვითარება
+                      ემოციების მართვა / ინტელექტის განვითარება
                     </option>
                     <option value="stress-management">სტრესის მართვა</option>
                     <option value="communication">კომუნიკაციის უნარები</option>
@@ -124,8 +125,7 @@ export default function Contact() {
                   <div className="info-icon">📞</div>
                   <div className="info-content">
                     <h4>ტელეფონი</h4>
-                    <p>+995 555 123 456</p>
-                    <p>+995 32 200 300</p>
+                    <p>511 44 75 77</p>
                   </div>
                 </div>
 
@@ -133,8 +133,8 @@ export default function Contact() {
                   <div className="info-icon">📍</div>
                   <div className="info-content">
                     <h4>მისამართი</h4>
+                    <p>19 Pavle Ingorokva St</p>
                     <p>თბილისი, საქართველო</p>
-                    <p>ვაჟა-ფშაველას გამზ. 25</p>
                   </div>
                 </div>
 
@@ -258,25 +258,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <footer className="contact-footer">
-        <div className="container">
-          <div className="footer-content">
-            <div className="footer-main">
-              <Image src="/logo.png" alt="ფორმაცია" width={40} height={40} />
-              <div>
-                <h3>ფორმაცია</h3>
-                <p>ემოციების ჰაბი</p>
-              </div>
-            </div>
-            <div className="footer-links">
-              <Link href="/">მთავარი</Link>
-              <Link href="/courses">კურსები</Link>
-              <Link href="/about">ჩვენ შესახებ</Link>
-            </div>
-          </div>
-          <p>&copy; 2025 ფორმაცია - ემოციების ჰაბი. ყველა უფლება დაცულია.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

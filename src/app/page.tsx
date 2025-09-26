@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Footer from "@/components/Footer";
 import "./page.css";
 
 export default function Home() {
@@ -20,7 +21,9 @@ export default function Home() {
             <Link href="/about">ჩვენ შესახებ</Link>
             <Link href="/contact">კონტაქტი</Link>
           </nav>
-          <div className="cta-button">ჰაბი</div>
+          <Link href="/courses" className="cta-button">
+            ჰაბი
+          </Link>
         </div>
       </header>
 
@@ -35,8 +38,12 @@ export default function Home() {
               პირადი უნარები ჩვენი პროფესიონალური კურსებით.
             </p>
             <div>
-              <button>კურსების ნახვა</button>
-              <button>უფასო კონსულტაცია</button>
+              <Link href="/courses">
+                <button>კურსების ნახვა</button>
+              </Link>
+              <Link href="/contact">
+                <button>უფასო კონსულტაცია</button>
+              </Link>
             </div>
           </div>
           <div>
@@ -69,10 +76,7 @@ export default function Home() {
       <section className="courses">
         <div>
           <h2>პოპულარული კურსები</h2>
-          <p>
-            აირჩიე შენთვის სასურველი კურსი და დაიწყე ემოციების მართვა
-            
-          </p>
+          <p>აირჩიე შენთვის სასურველი კურსი და დაიწყე ემოციების მართვა</p>
         </div>
         <div className="courses-grid">
           <div className="course-card">
@@ -116,30 +120,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer>
-        <div>
-          <Image src="/logo.png" alt="ფორმაცია" width={40} height={40} />
-          <div>
-            <h3>ფორმაცია</h3>
-            <p>ემოციების განვითარება</p>
-          </div>
-        </div>
-        <p>
-          ჩვენ ვართ ემოციების ინტელექტის განვითარების წამყვანი პლატფორმა
-          საქართველოში.
-        </p>
-        <div>
-          <Link href="/courses">კურსები</Link>
-          <Link href="/about">ჩვენ შესახებ</Link>
-          <Link href="/contact">კონტაქტი</Link>
-        </div>
-        <div>
-          <p>📧 info@formation.ge</p>
-          <p>📞 +995 555 123 456</p>
-          <p>📍 თბილისი, საქართველო</p>
-        </div>
-        <p>&copy; 2025 ფორმაცია - ემოციების ჰაბი. ყველა უფლება დაცულია.</p>
-      </footer>
+      <Footer />
     </div>
   );
 }

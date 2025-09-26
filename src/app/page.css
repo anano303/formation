@@ -356,10 +356,11 @@
 
 /* Footer */
 footer {
-  background: #2d2d2d;
+  background: linear-gradient(135deg, #2d2d2d 0%, #1e1e1e 100%);
   color: white;
   padding: 3rem 2rem 1rem;
   margin-top: 4rem;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
 }
 
 footer > div:first-child {
@@ -473,11 +474,28 @@ footer > p:last-child {
 
   footer {
     padding: 2rem 1rem 1rem;
+    text-align: center;
+  }
+
+  footer > div:first-child {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
   }
 
   footer > div:nth-child(3) {
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 1rem;
+    text-align: center;
+  }
+
+  footer > div:nth-child(4) {
+    text-align: center;
+  }
+
+  footer > p:first-of-type {
+    text-align: center;
+    font-size: 0.9rem;
   }
 }
 
@@ -533,4 +551,32 @@ footer > p:last-child {
   .courses h2 {
     font-size: 2.2rem;
   }
+}
+
+/* Footer Credits */
+.footer-credits {
+  text-align: center;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-credits p {
+  margin: 0.5rem 0;
+  color: #ddd;
+  font-size: 0.9rem;
+}
+
+.bestsoft-link {
+  color: #4caf50;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.bestsoft-link:hover {
+  color: #66bb6a;
+  border-bottom-color: #4caf50;
+  transform: translateY(-1px);
 }

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Footer from "@/components/Footer";
 import "./about.css";
 
 export default function About() {
@@ -303,25 +304,7 @@ export default function About() {
         </div>
       </section>
 
-      <footer className="about-footer">
-        <div className="container">
-          <div className="footer-content">
-            <div className="footer-main">
-              <Image src="/logo.png" alt="ფორმაცია" width={40} height={40} />
-              <div>
-                <h3>ფორმაცია</h3>
-                <p>ემოციების ჰაბი</p>
-              </div>
-            </div>
-            <div className="footer-links">
-              <Link href="/">მთავარი</Link>
-              <Link href="/courses">კურსები</Link>
-              <Link href="/contact">კონტაქტი</Link>
-            </div>
-          </div>
-          <p>&copy; 2025 ფორმაცია - ემოციების ჰაბი. ყველა უფლება დაცულია.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
