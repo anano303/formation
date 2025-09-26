@@ -240,6 +240,7 @@
 
 .member-image {
   margin-bottom: 1.5rem;
+  justify-self: center;
 }
 
 .member-image img {

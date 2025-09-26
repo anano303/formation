@@ -1,6 +1,9 @@
+/* ფონტის იმპორტი */
+@import url('https://fonts.googleapis.com/css2?family=FiraGO:wght@300;400;500;600;700&display=swap');
+
 /* კურსების გვერდის სტილები */
 .courses-page {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "FiraGO", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   color: #333;
   background: linear-gradient(
@@ -551,4 +554,307 @@
   .hero-stats span {
     font-size: 1.5rem;
   }
+
+  .categories-grid,
+  .methodology-grid,
+  .testimonials-grid,
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .category-card,
+  .methodology-item,
+  .testimonial-card,
+  .benefit-item {
+    padding: 1.5rem;
+  }
+}
+
+/* კატეგორიების სექცია */
+.course-categories {
+  padding: 4rem 0;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.course-categories h2 {
+  text-align: center;
+  color: #2d3748;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.category-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(233, 30, 99, 0.2);
+  border-color: #e91e63;
+}
+
+.category-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.category-card h3 {
+  color: #e91e63;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.category-card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ინსტრუქტორი და მეთოდოლოგია */
+.course-instructor,
+.course-methodology {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: rgba(233, 30, 99, 0.05);
+  border-radius: 10px;
+  border-left: 4px solid #e91e63;
+}
+
+.course-instructor h4,
+.course-methodology h4 {
+  color: #e91e63;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.course-instructor p,
+.course-methodology p {
+  color: #555;
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* სტუდენტების მიმოხილვა */
+.course-testimonial {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: rgba(76, 175, 80, 0.05);
+  border-radius: 10px;
+  border-left: 4px solid #4caf50;
+}
+
+.testimonial-content {
+  position: relative;
+}
+
+.quote-icon {
+  font-size: 2rem;
+  color: #4caf50;
+  position: absolute;
+  top: -10px;
+  left: -5px;
+}
+
+.course-testimonial p {
+  margin: 0;
+  font-style: italic;
+  color: #555;
+  padding-left: 1.5rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* სწავლების მეთოდოლოგია */
+.learning-methodology {
+  padding: 4rem 0;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.learning-methodology h2 {
+  text-align: center;
+  color: #2d3748;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+}
+
+.methodology-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.methodology-item {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.methodology-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(233, 30, 99, 0.2);
+}
+
+.method-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.methodology-item h3 {
+  color: #e91e63;
+  margin-bottom: 1rem;
+}
+
+.methodology-item p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* სტუდენტების მიმოხილვები */
+.student-testimonials {
+  padding: 4rem 0;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.student-testimonials h2 {
+  text-align: center;
+  color: #2d3748;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.testimonial-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(233, 30, 99, 0.2);
+}
+
+.testimonial-card .stars {
+  color: #ffd700;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.testimonial-card p {
+  color: #555;
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.student-info strong {
+  color: #e91e63;
+  font-weight: 600;
+}
+
+.student-info span {
+  color: #888;
+  font-size: 0.9rem;
+  display: block;
+  margin-top: 0.2rem;
+}
+
+/* კურსის უპირატესობები */
+.course-benefits {
+  padding: 4rem 0;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.course-benefits h2 {
+  text-align: center;
+  color: #2d3748;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.benefit-item {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.benefit-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(233, 30, 99, 0.2);
+  border-color: #e91e63;
+}
+
+.benefit-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.benefit-item h3 {
+  color: #e91e63;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.benefit-item p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* გარანტიის ტექსტი */
+.guarantee-text {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: rgba(76, 175, 80, 0.1);
+  border-radius: 10px;
+  border: 2px solid #4caf50;
+}
+
+.guarantee-text p {
+  margin: 0;
+  text-align: center;
+  color: #2e7d32;
+  font-weight: 500;
 }
