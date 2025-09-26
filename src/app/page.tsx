@@ -55,20 +55,20 @@ export default function Home() {
       <section className="stats">
         <div className="stats-grid">
           <div>
-            <span>500+</span>
-            <p>მოსწავლე</p>
+            <span>540+</span>
+            <p>სტუდენტი</p>
           </div>
           <div>
-            <span>15+</span>
+            <span>5</span>
             <p>კურსი</p>
           </div>
           <div>
-            <span>98%</span>
+            <span>95%</span>
             <p>კმაყოფილება</p>
           </div>
           <div>
-            <span>3+</span>
-            <p>წლიანი გამოცდილება</p>
+            <span>24/7</span>
+            <p>მხარდაჭერა</p>
           </div>
         </div>
       </section>
@@ -80,41 +80,61 @@ export default function Home() {
         </div>
         <div className="courses-grid">
           <div className="course-card">
-            <Image src="/2.jpg" alt="კურსი 1" width={400} height={200} />
+            <Image src="/2.jpg" alt="მითოდრამა" width={400} height={200} />
             <div>
-              <h3>ემოციების ინტელექტის განვითარება</h3>
-              <p>შეისწავლე როგორ გაიაზროო და მართო შენი ემოციები</p>
+              <h3>მითოდრამა</h3>
+              <p>
+                ფსიქოთერაპიული მეთოდი ბავშვებისა და მოზარდებისთვის - თერაპია
+                ზღაპრით
+              </p>
               <div>
                 <span>★★★★★ 4.9</span>
-                <span>₾150</span>
+                <span>შეთანხმებით</span>
               </div>
-              <button>კურსის ნახვა</button>
+              <Link href="/courses">
+                <button>კურსის ნახვა</button>
+              </Link>
             </div>
           </div>
 
           <div className="course-card">
-            <Image src="/3.jpg" alt="კურსი 2" width={400} height={200} />
+            <Image src="/3.jpg" alt="კალიგრაფია" width={400} height={200} />
             <div>
-              <h3>სტრესის მართვისა და რელაქსაციის ტექნიკები</h3>
-              <p>ისწავლე ეფექტური მეთოდები სტრესთან გასამკლავებლად</p>
+              <h3>კალიგრაფია</h3>
+              <p>
+                ლამაზი წერა და მოთმინების განვითარება ბავშვებისა და
+                ზრდასრულებისთვის
+              </p>
               <div>
                 <span>★★★★★ 4.8</span>
-                <span>₾120</span>
+                <span>₾150</span>
               </div>
-              <button>კურსის ნახვა</button>
+              <Link href="/courses">
+                <button>კურსის ნახვა</button>
+              </Link>
             </div>
           </div>
 
           <div className="course-card">
-            <Image src="/4.jpg" alt="კურსი 3" width={400} height={200} />
+            <Image
+              src="/6.jpg"
+              alt="ცეცხლთან თამაში"
+              width={400}
+              height={200}
+            />
             <div>
-              <h3>ეფექტური კომუნიკაციის უნარები</h3>
-              <p>გაუმჯობესე შენი კომუნიკაციის უნარები და ურთიერთობები</p>
+              <h3>ცეცხლთან თამაში</h3>
+              <p>
+                ფსიქოლოგიური ტემპერატურის თამაში თვითანალიზისა და
+                თვითშეცნობისთვის
+              </p>
               <div>
-                <span>★★★★☆ 4.7</span>
+                <span>★★★★★ 4.8</span>
                 <span>₾100</span>
               </div>
-              <button>კურსის ნახვა</button>
+              <Link href="/courses">
+                <button>კურსის ნახვა</button>
+              </Link>
             </div>
           </div>
         </div>
