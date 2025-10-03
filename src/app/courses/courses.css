@@ -835,41 +835,81 @@
   font-size: 2.5rem;
 }
 
-.methodology-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
+/* სწავლების მეთოდოლოგია - Compact List */
+.methodology-list {
+  max-width: 800px;
   margin: 0 auto;
   padding: 0 2rem;
 }
 
 .methodology-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
   background: rgba(255, 255, 255, 0.9);
-  border-radius: 15px;
-  padding: 2rem;
-  text-align: center;
+  border-radius: 12px;
+  border-left: 4px solid #e91e63;
   transition: all 0.3s ease;
 }
 
 .methodology-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(233, 30, 99, 0.2);
+  transform: translateX(5px);
+  box-shadow: 0 4px 15px rgba(233, 30, 99, 0.15);
+  border-left-width: 6px;
 }
 
-.method-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.methodology-item h3 {
+.method-number {
+  font-size: 1.8rem;
+  font-weight: 800;
   color: #e91e63;
-  margin-bottom: 1rem;
+  min-width: 50px;
+  font-family: "BPG Nino Mtavruli", "FiraGO", Arial, sans-serif;
 }
 
-.methodology-item p {
+.method-content {
+  flex: 1;
+}
+
+.method-content h3 {
+  color: #2d2d2d;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: "BPG Nino Mtavruli", "FiraGO", Arial, sans-serif;
+}
+
+.method-content p {
   color: #666;
+  margin: 0;
   line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .methodology-list {
+    padding: 0 1rem;
+  }
+
+  .methodology-item {
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .method-number {
+    font-size: 1.5rem;
+    min-width: 40px;
+  }
+
+  .method-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .method-content p {
+    font-size: 0.9rem;
+  }
 }
 
 /* სტუდენტების მიმოხილვები */
