@@ -161,9 +161,9 @@ export default function Courses() {
   return (
     <div className="courses-page">
       {/* Navbar Logo */}
-      <div className="navbar-logo">
-        <Image src="/logo.png" alt="ფორმაცია" width={70} height={70} />
-      </div>
+      <Link href="/" className="navbar-logo">
+        <Image src="/logo.png" alt="ფორმაცია" width={150} height={150} />
+      </Link>
 
       <Navigation />
 

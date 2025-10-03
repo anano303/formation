@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="footer-container">
         <div className="footer-content">
           <div className="footer-main">
-            <Image src="/logo.png" alt="ფორმაცია" width={40} height={40} />
+            <Image src="/logo.png" alt="ფორმაცია" width={150} height={150} />
             <div className="footer-brand">
               <h3>ფორმაცია</h3>
               <p>ემოციების ჰაბი</p>
