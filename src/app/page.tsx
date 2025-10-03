@@ -1,185 +1,81 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/Footer";
 import MessengerChat from "@/components/MessengerChat";
+import Navigation from "@/components/Navigation";
 import "./page.css";
-import { Metadata } from "next";
 import { organizationSchema, websiteSchema } from "@/lib/schemas";
-
-export const metadata: Metadata = {
-  title: "ფორმაცია - ემოციების ჰაბი | ემოციური განვითარების კურსები",
-  description:
-    "ფორმაცია არის ემოციების განვითარების ცენტრი, სადაც ვთავაზობთ მითოდრამის, კალიგრაფიის, Self მარკეტინგის და სხვა უნიკალურ კურსებს ბავშვებისა და მოზარდებისთვის. 540+ დასრულებული სტუდენტი.",
-  keywords: [
-    "ფორმაცია",
-    "ემოციები",
-    "მითოდრამა",
-    "კალიგრაფია",
-    "Self მარკეტინგი",
-    "ბავშვების განვითარება",
-    "მოზარდების კურსები",
-    "თბილისი",
-  ],
-  authors: [{ name: "ფორმაცია - ემოციების ჰაბი" }],
-  viewport: "width=device-width, initial-scale=1",
-  robots: "index, follow",
-  openGraph: {
-    title: "ფორმაცია - ემოციების ჰაბი",
-    description: "ემოციური განვითარების კურსები ბავშვებისა და მოზარდებისთვის",
-    url: "https://formation.ge",
-    siteName: "ფორმაცია",
-    images: [
-      {
-        url: "/logo.png",
-        width: 1200,
-        height: 630,
-        alt: "ფორმაცია - ემოციების ჰაბი",
-      },
-    ],
-    locale: "ka_GE",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "ფორმაცია - ემოციების ჰაბი",
-    description: "ემოციური განვითარების კურსები ბავშვებისა და მოზარდებისთვის",
-    images: ["/logo.png"],
-  },
-};
 
 export default function Home() {
   return (
     <div className="main-container">
-      <header className="header">
-        <div className="nav-content">
-          <div className="logo-section">
-            <Image src="/logo.png" alt="ფორმაცია Logo" width={50} height={50} />
-            <div>
-              <h1>ფორმაცია</h1>
-              <p>ემოციების ჰაბი</p>
-            </div>
-          </div>
-          <nav>
-            <Link href="/">მთავარი</Link>
-            <Link href="/courses">კურსები</Link>
-            <Link href="/about">ჩვენ შესახებ</Link>
-            <Link href="/contact">კონტაქტი</Link>
-          </nav>
-          <Link href="/courses" className="cta-button">
-            ჰაბი
-          </Link>
-        </div>
-      </header>
+      {/* Navbar Logo */}
+      <div className="navbar-logo">
+        <Image src="/logo.png" alt="ფორმაცია" width={70} height={70} />
+      </div>
 
-      <section className="hero">
+      <Navigation />
+
+      {/* Hero Section - Full Screen */}
+      <section className="hero-section">
+        <div className="hero-overlay"></div>
         <div className="hero-content">
-          <div>
-            <h1>
-              ფორმაცია ემოციების <span>ჰაბი</span>
-            </h1>
-            <p>
-              გაიღრმავე შენი ცოდნა ემოციური ინტელექტის სფეროში და განავითარე
-              პირადი უნარები ჩვენი პროფესიონალური კურსებით.
-            </p>
-            <div>
-              <Link href="/courses">
-                <button>კურსების ნახვა</button>
-              </Link>
-              <Link href="/contact">
-                <button>უფასო კონსულტაცია</button>
-              </Link>
-            </div>
-          </div>
-          <div>
-            <Image src="/1.jpg" alt="ფორმაცია" width={600} height={400} />
-          </div>
-        </div>
-      </section>
+          <h1>ვინ ვართ</h1>
+          <p>ემოციების ჰაბი • ემოციური განვითარების ცენტრი</p>
 
-      <section className="stats">
-        <div className="stats-grid">
-          <div>
-            <span>540+</span>
-            <p>სტუდენტი</p>
-          </div>
-          <div>
-            <span>5</span>
-            <p>კურსი</p>
-          </div>
-          <div>
-            <span>95%</span>
-            <p>კმაყოფილება</p>
-          </div>
-          <div>
-            <span>24/7</span>
-            <p>მხარდაჭერა</p>
-          </div>
-        </div>
-      </section>
+          {/* Social Media Icons */}
+          <div className="hero-social">
+            {/* SVG Gradient Definition for Instagram */}
+            <svg width="0" height="0" style={{ position: "absolute" }}>
+              <defs>
+                <linearGradient
+                  id="instagram-gradient"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="100%"
+                >
+                  <stop offset="0%" stopColor="#f09433" />
+                  <stop offset="25%" stopColor="#e6683c" />
+                  <stop offset="50%" stopColor="#dc2743" />
+                  <stop offset="75%" stopColor="#cc2366" />
+                  <stop offset="100%" stopColor="#bc1888" />
+                </linearGradient>
+              </defs>
+            </svg>
 
-      <section className="courses">
-        <div>
-          <h2>პოპულარული კურსები</h2>
-          <p>აირჩიე შენთვის სასურველი კურსი და დაიწყე ემოციების მართვა</p>
-        </div>
-        <div className="courses-grid">
-          <div className="course-card">
-            <Image src="/2.jpg" alt="მითოდრამა" width={400} height={200} />
-            <div>
-              <h3>მითოდრამა</h3>
-              <p>
-                ფსიქოთერაპიული მეთოდი ბავშვებისა და მოზარდებისთვის - თერაპია
-                ზღაპრით
-              </p>
-              <div>
-                <span>★★★★★ 4.9</span>
-                <span>შეთანხმებით</span>
-              </div>
-              <Link href="/courses">
-                <button>კურსის ნახვა</button>
-              </Link>
-            </div>
-          </div>
-
-          <div className="course-card">
-            <Image src="/3.jpg" alt="კალიგრაფია" width={400} height={200} />
-            <div>
-              <h3>კალიგრაფია</h3>
-              <p>
-                ლამაზი წერა და მოთმინების განვითარება ბავშვებისა და
-                ზრდასრულებისთვის
-              </p>
-              <div>
-                <span>★★★★★ 4.8</span>
-                <span>₾150</span>
-              </div>
-              <Link href="/courses">
-                <button>კურსის ნახვა</button>
-              </Link>
-            </div>
-          </div>
-
-          <div className="course-card">
-            <Image
-              src="/6.jpg"
-              alt="ცეცხლთან თამაში"
-              width={400}
-              height={200}
-            />
-            <div>
-              <h3>ცეცხლთან თამაში</h3>
-              <p>
-                ფსიქოლოგიური ტემპერატურის თამაში თვითანალიზისა და
-                თვითშეცნობისთვის
-              </p>
-              <div>
-                <span>★★★★★ 4.8</span>
-                <span>₾100</span>
-              </div>
-              <Link href="/courses">
-                <button>კურსის ნახვა</button>
-              </Link>
-            </div>
+            <a
+              href="https://www.facebook.com/Formationemotionalhub"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-icon facebook"
+            >
+              <svg viewBox="0 0 24 24">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+            </a>
+            <a
+              href="https://www.instagram.com/formation.ge"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-icon instagram"
+            >
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+            </a>
+            <a href="tel:511447577" className="social-icon phone">
+              <svg viewBox="0 0 24 24">
+                <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
+              </svg>
+            </a>
+            <a href="mailto:info@formation.ge" className="social-icon email">
+              <svg viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+              </svg>
+            </a>
           </div>
         </div>
       </section>

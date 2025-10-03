@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/Footer";
 import MessengerChat from "@/components/MessengerChat";
+import Navigation from "@/components/Navigation";
 import "./about.css";
 import { Metadata } from "next";
 
@@ -39,20 +40,12 @@ export const metadata: Metadata = {
 export default function About() {
   return (
     <div className="about-page">
-      <header className="about-header">
-        <div className="nav-content">
-          <Link href="/" className="back-link">
-            ← მთავარ გვერდზე დაბრუნება
-          </Link>
-          <div className="logo-section">
-            <Image src="/logo.png" alt="ფორმაცია Logo" width={40} height={40} />
-            <div>
-              <h1>ფორმაცია</h1>
-              <p>ემოციების ჰაბი</p>
-            </div>
-          </div>
-        </div>
-      </header>
+      {/* Navbar Logo */}
+      <div className="navbar-logo">
+        <Image src="/logo.png" alt="ფორმაცია" width={70} height={70} />
+      </div>
+
+      <Navigation />
 
       <section className="about-hero">
         <div className="container">
@@ -192,7 +185,7 @@ export default function About() {
               <div className="stat-number">500+</div>
               <div className="stat-label">კმაყოფილი კლიენტი</div>
               <div className="stat-description">
-                ჩვენმა კურსებმა დაეხმარა 500+ ადამიანს
+                ჩვენი კურსები დაეხმარა 500+ ადამიანს
               </div>
             </div>
             <div className="stat-card">
@@ -261,61 +254,6 @@ export default function About() {
                 width={400}
                 height={300}
               />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="testimonials-section">
-        <div className="container">
-          <h2>რას ამბობენ ჩვენი კლიენტები</h2>
-          <div className="testimonials-grid">
-            <div className="testimonial">
-              <div className="testimonial-content">
-                <p>
-                  "ფორმაციის კურსებმა ჩემი ცხოვრება მთლიანად შეცვალა. ახლა ვიცი
-                  როგორ ვმართო ჩემი ემოციები და ურთიერთობები უკეთესია."
-                </p>
-              </div>
-              <div className="testimonial-author">
-                <Image src="/5.jpg" alt="მარიამი" width={50} height={50} />
-                <div>
-                  <h5>მარიამ ქართველიშვილი</h5>
-                  <span>ბიზნეს ანალიტიკოსი</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="testimonial">
-              <div className="testimonial-content">
-                <p>
-                  "სტრესის მართვის კურსმა დამეხმარა სამსახურში უკეთესად
-                  მომუშავებინა. ძალიან კმაყოფილი ვარ შედეგით."
-                </p>
-              </div>
-              <div className="testimonial-author">
-                <Image src="/6.jpg" alt="გიორგი" width={50} height={50} />
-                <div>
-                  <h5>გიორგი მამულაშვილი</h5>
-                  <span>პროექტ მენეჯერი</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="testimonial">
-              <div className="testimonial-content">
-                <p>
-                  "კომუნიკაციის კურსის შემდეგ ჩემი ურთიერთობები ოჯახში და
-                  სამსახურში მნიშვნელოვნად გაუმჯობესდა."
-                </p>
-              </div>
-              <div className="testimonial-author">
-                <Image src="/7.jpg" alt="ნინო" width={50} height={50} />
-                <div>
-                  <h5>ნინო გელაშვილი</h5>
-                  <span>ადვოკატი</span>
-                </div>
-              </div>
             </div>
           </div>
         </div>

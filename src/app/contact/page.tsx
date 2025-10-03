@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/Footer";
 import MessengerChat from "@/components/MessengerChat";
+import Navigation from "@/components/Navigation";
 import "./contact.css";
 import { Metadata } from "next";
 
@@ -39,20 +40,12 @@ export const metadata: Metadata = {
 export default function Contact() {
   return (
     <div className="contact-page">
-      <header className="contact-header">
-        <div className="nav-content">
-          <Link href="/" className="back-link">
-            ← მთავარ გვერდზე დაბრუნება
-          </Link>
-          <div className="logo-section">
-            <Image src="/logo.png" alt="ფორმაცია Logo" width={40} height={40} />
-            <div>
-              <h1>ფორმაცია</h1>
-              <p>ემოციების ჰაბი</p>
-            </div>
-          </div>
-        </div>
-      </header>
+      {/* Navbar Logo */}
+      <div className="navbar-logo">
+        <Image src="/logo.png" alt="ფორმაცია" width={70} height={70} />
+      </div>
+
+      <Navigation />
 
       <section className="contact-hero">
         <div className="container">

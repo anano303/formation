@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/Footer";
 import MessengerChat from "@/components/MessengerChat";
+import Navigation from "@/components/Navigation";
 import "./courses.css";
 
 export default function Courses() {
@@ -159,20 +160,12 @@ export default function Courses() {
 
   return (
     <div className="courses-page">
-      <header className="courses-header">
-        <div className="nav-content">
-          <Link href="/" className="back-link">
-            ← მთავარ გვერდზე დაბრუნება
-          </Link>
-          <div className="logo-section">
-            <Image src="/logo.png" alt="ფორმაცია Logo" width={40} height={40} />
-            <div>
-              <h1>ფორმაცია</h1>
-              <p>ემოციების ჰაბი</p>
-            </div>
-          </div>
-        </div>
-      </header>
+      {/* Navbar Logo */}
+      <div className="navbar-logo">
+        <Image src="/logo.png" alt="ფორმაცია" width={70} height={70} />
+      </div>
+
+      <Navigation />
 
       <section className="courses-hero">
         <div className="container">
@@ -181,48 +174,6 @@ export default function Courses() {
             აირჩიე შენთვის სასურველი კურსი და დაიწყე ემოციონალური განვითარების
             გზა ღრმა ცოდნისა და პრაქტიკული უნარებით
           </p>
-          <div className="hero-stats">
-            <div>
-              <span>5</span> კურსი
-            </div>
-            <div>
-              <span>540+</span> სტუდენტი
-            </div>
-            <div>
-              <span>95%</span> კმაყოფილება
-            </div>
-            <div>
-              <span>24/7</span> მხარდაჭერა
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="course-categories">
-        <div className="container">
-          <h2>კურსების კატეგორიები</h2>
-          <div className="categories-grid">
-            <div className="category-card">
-              <div className="category-icon">👶</div>
-              <h3>ბავშვებისთვის</h3>
-              <p>მითოდრამა და ბავშვების ფსიქოთერაპია</p>
-            </div>
-            <div className="category-card">
-              <div className="category-icon">🎨</div>
-              <h3>შემოქმედება</h3>
-              <p>კალიგრაფია, მუსიკა და ხელოვნების კურსები</p>
-            </div>
-            <div className="category-card">
-              <div className="category-icon">�</div>
-              <h3>მოზარდებისთვის</h3>
-              <p>Self მარკეტინგი და პირადობის განვითარება</p>
-            </div>
-            <div className="category-card">
-              <div className="category-icon">�</div>
-              <h3>თვითანალიზი</h3>
-              <p>ცეცხლთან თამაში და ფსიქოლოგიური ვარჯიშები</p>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -401,50 +352,9 @@ export default function Courses() {
         </div>
       </section>
 
-      <section className="student-testimonials">
-        <div className="container">
-          <h2>რას ამბობენ ჩვენი სტუდენტები</h2>
-          <div className="testimonials-grid">
-            <div className="testimonial-card">
-              <div className="stars">★★★★★</div>
-              <p>
-                "ფორმაცია ნამდვილად შემცვალა! ემოციური ინტელექტის კურსის შემდეგ
-                ყველაფერი სხვაგვარად ვუყურებ ურთიერთობებს."
-              </p>
-              <div className="student-info">
-                <strong>ანა მ.</strong>
-                <span>ემოციური ინტელექტის კურსი</span>
-              </div>
-            </div>
-            <div className="testimonial-card">
-              <div className="stars">★★★★★</div>
-              <p>
-                "სტრესის მართვის კურსმა ნამდვილად გამიმარტივა ცხოვრება. ახლა
-                მაქვს კონკრეტული ინსტრუმენტები სირთულეებთან გასამკლავებლად."
-              </p>
-              <div className="student-info">
-                <strong>დავით კ.</strong>
-                <span>სტრესის მართვის კურსი</span>
-              </div>
-            </div>
-            <div className="testimonial-card">
-              <div className="stars">★★★★★</div>
-              <p>
-                "ლიდერშიპის კურსის შემდეგ გუნდში შედეგები მნიშვნელოვნად
-                გაუმჯობესდა. რეკომენდაცია ყველა მენეჯერს!"
-              </p>
-              <div className="student-info">
-                <strong>გიორგი მ.</strong>
-                <span>ლიდერშიპის კურსი</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="course-benefits">
         <div className="container">
-          <h2>რატომ აირჩიო ფორმაცია?</h2>
+          <h2>რატომ უნდა აირჩიო ფორმაცია?</h2>
           <div className="benefits-grid">
             <div className="benefit-item">
               <div className="benefit-icon">🏆</div>

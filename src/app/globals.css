@@ -5,6 +5,16 @@
 @import "@fontsource/firago/600.css";
 @import "@fontsource/firago/700.css";
 
+/* BPG Nino Mtavruli Font */
+@font-face {
+  font-family: "BPG Nino Mtavruli";
+  src: url("/bpg_nino_mtavruli_normal_[FONTS.GE]/bpg_nino_mtavruli_normal.otf")
+    format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -40,4 +50,37 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: "FiraGO", Arial, Helvetica, sans-serif;
+}
+
+/* Navbar Logo - Global */
+.navbar-logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.05);
+}
+
+.navbar-logo img {
+  border-radius: 20px;
+  width: 150px !important;
+  height: 150px !important;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+  transition: filter 0.3s ease;
+}
+
+.navbar-logo:hover img {
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.4));
+}
+@media screen and (max-width: 767px) {
+  .navbar-logo img {
+    width: 70px !important;
+    height: 70px !important;
+  }
 }
